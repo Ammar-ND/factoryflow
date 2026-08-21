@@ -1,3 +1,5 @@
+# FactoryFlow
+
 ## Development Setup
 
 ### Frontend
@@ -52,6 +54,13 @@ PORT=3000
 FRONTEND_URL=http://localhost:5173
 ```
 
-## Project Status
+## Documentation
 
-Initial full-stack project foundation completed.
+Project documentation is available in the `docs` folder:
+
+* Project Vision
+* Business Requirements
+* Core Modules
+* Initial Architecture
+* Initial ER Diagram
+

@@ -1,7 +1,57 @@
-# FactoryFlow
+## Development Setup
 
-FactoryFlow is a full-stack manufacturing workflow management system.
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm run build
+npm start
+```
+
+The backend runs on:
+
+```text
+http://localhost:3000
+```
+
+Health endpoint:
+
+```text
+GET /api/health
+```
+
+## Environment Variables
+
+Create `.env` files based on the provided `.env.example` files.
+
+### Frontend
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+### Backend
+
+```env
+PORT=3000
+FRONTEND_URL=http://localhost:5173
+```
 
 ## Project Status
 
-Initial project setup in progress.
+Initial full-stack project foundation completed.

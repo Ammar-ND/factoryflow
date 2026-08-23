@@ -8,3 +8,11 @@ dist/
 
 .DS_Store
 Thumbs.db
+
+# Visual Studio
+.vs/
+**/.vs/
+
+# .NET build files
+**/bin/
+**/obj/

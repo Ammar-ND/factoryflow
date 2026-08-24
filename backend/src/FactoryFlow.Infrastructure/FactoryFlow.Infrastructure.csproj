@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FactoryFlow.Application\FactoryFlow.Application.csproj" />
+    <ProjectReference Include="..\FactoryFlow.Domain\FactoryFlow.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

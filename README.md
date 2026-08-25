@@ -1,6 +1,29 @@
 # FactoryFlow
 
+Manufacturing Workflow Management System.
+
 ## Development Setup
+
+### Backend
+
+```bash
+cd backend
+dotnet restore
+dotnet build
+dotnet run --project src/FactoryFlow.Api
+```
+
+Backend:
+
+```text
+https://localhost:7010
+```
+
+Health endpoint:
+
+```text
+GET /api/health
+```
 
 ### Frontend
 
@@ -10,57 +33,20 @@ npm install
 npm run dev
 ```
 
-The frontend runs on:
+Frontend:
 
 ```text
 http://localhost:5173
 ```
 
-### Backend
-
-```bash
-cd backend
-npm install
-npm run build
-npm start
-```
-
-The backend runs on:
-
-```text
-http://localhost:3000
-```
-
-Health endpoint:
-
-```text
-GET /api/health
-```
-
 ## Environment Variables
 
-Create `.env` files based on the provided `.env.example` files.
-
-### Frontend
+Create `frontend/.env` from `frontend/.env.example`:
 
 ```env
-VITE_API_URL=http://localhost:3000
-```
-
-### Backend
-
-```env
-PORT=3000
-FRONTEND_URL=http://localhost:5173
+VITE_API_URL=https://localhost:7010
 ```
 
 ## Documentation
 
-Project documentation is available in the `docs` folder:
-
-* Project Vision
-* Business Requirements
-* Core Modules
-* Initial Architecture
-* Initial ER Diagram
-
+See the `docs` folder for project vision, requirements, architecture, and ER diagram.

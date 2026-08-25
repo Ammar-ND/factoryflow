@@ -16,3 +16,6 @@ Thumbs.db
 # .NET build files
 **/bin/
 **/obj/
+
+# Visual Studio user-specific files
+*.csproj.user

@@ -1,4 +1,14 @@
+using FactoryFlow.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<FactoryFlowDbContext>(options =>
+{
+    var connectionString =
+        builder.Configuration.GetConnectionString("Database");
+
+    options.UseSqlServer(connectionString);
+});
 
 // Add services to the container.
 

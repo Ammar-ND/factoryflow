@@ -24,4 +24,10 @@ public sealed class FactoryFlowDbContext : DbContext
     public DbSet<Product> Products => Set<Product>();
 
     public DbSet<ProductionOrder> ProductionOrders => Set<ProductionOrder>();
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(
+            typeof(FactoryFlowDbContext).Assembly);
+    }
 }

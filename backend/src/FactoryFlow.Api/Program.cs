@@ -1,7 +1,11 @@
+using FactoryFlow.Application;
 using FactoryFlow.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddApplication();
+
 builder.Services.AddDbContext<FactoryFlowDbContext>(options =>
 {
     var connectionString =

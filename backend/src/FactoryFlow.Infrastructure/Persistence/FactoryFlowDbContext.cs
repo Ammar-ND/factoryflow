@@ -4,10 +4,11 @@ using FactoryFlow.Domain.Products;
 using FactoryFlow.Domain.ProductionLines;
 using FactoryFlow.Domain.ProductionOrders;
 using Microsoft.EntityFrameworkCore;
+using FactoryFlow.Application.Abstractions.Persistence;
 
 namespace FactoryFlow.Infrastructure.Persistence;
 
-public sealed class FactoryFlowDbContext : DbContext
+public sealed class FactoryFlowDbContext : DbContext, IUnitOfWork
 {
     public FactoryFlowDbContext(
         DbContextOptions<FactoryFlowDbContext> options)

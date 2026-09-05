@@ -1,6 +1,8 @@
 using FactoryFlow.Application;
 using FactoryFlow.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using FactoryFlow.Application.Abstractions.Persistence;
+using FactoryFlow.Infrastructure.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,17 @@ builder.Services.AddDbContext<FactoryFlowDbContext>(options =>
 
     options.UseSqlServer(connectionString);
 });
+
+builder.Services.AddScoped<
+    IProductionOrderRepository,
+    ProductionOrderRepository>();
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+builder.Services.AddScoped<IUnitOfWork>(serviceProvider =>
+    serviceProvider.GetRequiredService<FactoryFlowDbContext>());
+
+builder.Services.AddScoped<IMachineRepository, MachineRepository>();
 
 // Add services to the container.
 

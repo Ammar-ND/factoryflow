@@ -1,8 +1,9 @@
+using FactoryFlow.Api.ExceptionHandling;
 using FactoryFlow.Application;
-using FactoryFlow.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
 using FactoryFlow.Application.Abstractions.Persistence;
+using FactoryFlow.Infrastructure.Persistence;
 using FactoryFlow.Infrastructure.Persistence.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +47,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddOpenApi();
 
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -61,5 +64,7 @@ app.UseCors("Frontend");
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseExceptionHandler();
 
 app.Run();

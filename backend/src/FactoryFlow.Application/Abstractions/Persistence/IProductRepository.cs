@@ -7,4 +7,8 @@ public interface IProductRepository
     Task AddAsync(
         Product product,
         CancellationToken cancellationToken = default);
+
+    Task<Product?> GetByIdAsync(
+        ProductId productId,
+        CancellationToken cancellationToken = default);
 }

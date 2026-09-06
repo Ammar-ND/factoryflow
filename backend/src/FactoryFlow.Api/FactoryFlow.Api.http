@@ -4,3 +4,16 @@ GET {{FactoryFlow.Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+POST {{FactoryFlow.Api_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Steel Gear",
+  "code": "PRD-001"
+}
+
+###
+
+GET {{FactoryFlow.Api_HostAddress}}/api/products/53764120-cc06-4f51-af47-417c2a8880ba
+Accept: application/json

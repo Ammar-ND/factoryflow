@@ -20,4 +20,14 @@ public sealed class ProductRepository : IProductRepository
             product,
             cancellationToken);
     }
+
+    public async Task<Product?> GetByIdAsync(
+    ProductId productId,
+    CancellationToken cancellationToken = default)
+    {
+        return await _dbContext.Products.FindAsync(
+            [productId],
+            cancellationToken);
+    }
 }
+

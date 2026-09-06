@@ -1,20 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
-namespace FactoryFlow.Api.Controllers
+namespace FactoryFlow.Api.Controllers;
+
+public sealed class HealthController : ApiController
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class HealthController : ControllerBase
+    [HttpGet]
+    public IActionResult Get()
     {
-        [HttpGet]
-        public IActionResult Get()
+        return Ok(new
         {
-            return Ok(new
-            {
-                status = "ok",
-                message = "FactoryFlow API is running"
-            });
-        }
+            status = "ok",
+            message = "FactoryFlow API is running"
+        });
     }
 }

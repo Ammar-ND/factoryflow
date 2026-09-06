@@ -7,6 +7,7 @@ using FactoryFlow.Domain.Products;
 
 namespace FactoryFlow.Api.Controllers;
 
+[Route("api/products")]
 public sealed class ProductsController : ApiController
 {
     private readonly ISender _sender;
